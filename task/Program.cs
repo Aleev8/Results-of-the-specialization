@@ -7,7 +7,7 @@ void FillArray (string[] array)
     }
 }
 
-string [] FilterFor3Char(string[] array)
+string[] FilterFor3Char(string[] array)
 {
     int length = 0;
     for(int i = 0; i < array.Length; i++) 
