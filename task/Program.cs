@@ -1,15 +1,24 @@
-﻿
+﻿Console.Clear();
 void FillArray (string[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(1, 100000).ToString();
+        array[i] = new Random().Next(1, 10000).ToString();
     }
 }
 
 string [] FilterFor3Char(string[] array)
 {
-    string[] resultArray = new string[array.Length];
+    int length = 0;
+    for(int i = 0; i < array.Length; i++) 
+    {
+        if(array[i].Length <= 3) 
+        {
+            length++;
+        }
+    }
+
+    string[] resultArray = new string[length];
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
@@ -26,14 +35,14 @@ void PrintArray(string[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"{array[i]} ");
+        Console.Write($"{array[i]}; ");
     }
     Console.WriteLine();
 }
 
-string[] primaryArray = new string[new Random().Next(1, 10)];
+string[] primaryArray = new string[new Random().Next(8, 24)];
 
 FillArray(primaryArray);
-PrintArray(primaryArray);
-PrintArray(FilterFor3Char(primaryArray));
+FilterFor3Char(primaryArray);
+Console.WriteLine($"[{string.Join(", ", primaryArray)}] -> [{string.Join(", ", FilterFor3Char(primaryArray))}]");
 
