@@ -31,15 +31,6 @@ string [] FilterFor3Char(string[] array)
     return resultArray;
 }
 
-void PrintArray(string[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"{array[i]}; ");
-    }
-    Console.WriteLine();
-}
-
 string[] primaryArray = new string[new Random().Next(8, 24)];
 
 FillArray(primaryArray);
